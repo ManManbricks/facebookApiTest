@@ -13,12 +13,32 @@ var T = new Twit({
   timeout_ms:           60*1000,  
 })
 
-var quit = 'q';
+rl.prompt();
 
-rl.question('Enter a post : ', function(answer){
+rl.on('line', (line) => {
+console.log( "What do you want to do?" );
+console.log( "Enter 1 to post a comment" );
+console.log( "Press exit to exit app" );
+
+	switch(line.trim()) {
+    case "1":
+      rl.question('Enter a post : ', function(answer){
  
-  T.post('statuses/update', { status: answer }, function(err, data, response) {
-  console.log(data)
-})
-})
+			T.post('statuses/update', { status: answer }, function(err, data, response) {
+			console.log(data)
+			})
+		})
+    break;
+	case "exit": rl.close(); break;
+    default:
+      console.log(`Invalid option '${line.trim()}'`);
+      break;
+  }
+  rl.prompt();
+  }).on('close', () => {
+  console.log('Thank You for using my app');
+  console.log( "Exiting app..." );
+  process.exit(0);
+});
+
 
