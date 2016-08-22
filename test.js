@@ -1,7 +1,7 @@
 var readline = require('readline');
 var request = require('request');
-var api = require('./facebook');
-var oauth = require('./oauth')
+//var api = require('./facebook');
+//var oauth = require('./oauth')
  // app = express();
 
 var rl = readline.createInterface({
@@ -13,7 +13,7 @@ var message = "";
 var access_token = "595375967308784|YFmEHJfn4rVdif8KHpQW7Yxl17g";
 var url = ""; //'https://graph.facebook.com/me/feed';
 var response = "";
-
+var quit = 'q';
 function postMessage(access_token, message, response) {
     
     //Add Access token Parameter    
@@ -26,7 +26,7 @@ function postMessage(access_token, message, response) {
     request.post({url: url, qs: params}, function(err, resp, body) {
       
       // Handle any errors that occur
-      if (err) return console.log("Error occured: ", err);
+      if (err) return console.log("Error occurred: ", err);
 		body = JSON.parse(body);
       if (body.error) return console.log("Error returned from facebook: ", body.error);
 
@@ -48,7 +48,12 @@ rl.question('Enter a message : ', function(answer){
  
   url = answer;
   });
-rl.close();
+  
+  r1.question('Do you want to quit? enter q to quit', function(answer){
+	  quit = answer;
+  });
+  if(q == quit)
+    rl.close();
 });
 
 
