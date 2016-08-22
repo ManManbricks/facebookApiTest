@@ -18,7 +18,7 @@ console.log( "What do you want to do?" );
 console.log( "Enter 1 to post a comment" );
 console.log( "Enter 2 to search twitter for all tweets" );
 console.log( "Press exit to exit app" );
-rl.setprompt("Enter choice:");
+rl.setPrompt("Enter choice:");
 
 rl.on('line', (line) => {
 
