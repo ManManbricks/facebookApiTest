@@ -1,5 +1,24 @@
 var readline = require('readline');
-var request = require('request');
+var Twit = require('twit')
+
+var T = new Twit({
+  consumer_key:         '...',
+  consumer_secret:      '...',
+  access_token:         '...',
+  access_token_secret:  '...',
+  timeout_ms:           60*1000,  
+})
+
+
+
+rl.question('Enter a post : ', function(answer){
+ 
+  T.post('statuses/update', { status: answer }, function(err, data, response) {
+  console.log(data)
+})
+})
+
+/*var request = require('request');
 //var api = require('./facebook');
 //var oauth = require('./oauth')
  // app = express();
