@@ -13,12 +13,13 @@ var T = new Twit({
   timeout_ms:           60*1000,  
 })
 
-rl.prompt();
-
-rl.on('line', (line) => {
 console.log( "What do you want to do?" );
 console.log( "Enter 1 to post a comment" );
 console.log( "Press exit to exit app" );
+rl.prompt();
+
+rl.on('line', (line) => {
+
 
 	switch(line.trim()) {
     case "1":
@@ -35,6 +36,9 @@ console.log( "Press exit to exit app" );
       break;
   }
   rl.prompt();
+  console.log( "What do you want to do?" );
+console.log( "Enter 1 to post a comment" );
+console.log( "Press exit to exit app" );
   }).on('close', () => {
   console.log('Thank You for using my app');
   console.log( "Exiting app..." );
