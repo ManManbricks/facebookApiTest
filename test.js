@@ -50,10 +50,10 @@ rl.question('Enter a message : ', function(answer){
   });
   
   rl.question('Do you want to quit? enter q to quit', function(answer){
-	  quit = answer;
+	  if(quit == answer)
+          rl.close();
   });
-  if(q == quit)
-    rl.close();
+  
 });
 
 
