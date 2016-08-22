@@ -35,10 +35,11 @@ rl.on('line', (line) => {
       console.log(`Invalid option '${line.trim()}'`);
       break;
   }
-  rl.prompt();
   console.log( "What do you want to do?" );
 console.log( "Enter 1 to post a comment" );
 console.log( "Press exit to exit app" );
+  rl.prompt();
+  
   }).on('close', () => {
   console.log('Thank You for using my app');
   console.log( "Exiting app..." );
