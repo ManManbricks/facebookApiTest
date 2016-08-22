@@ -31,12 +31,12 @@ function postMessage(access_token, message, response) {
       if (body.error) return console.log("Error returned from facebook: ", body.error);
 
       // Generate output data
-      var output = '<p>Message has been posted to your feed. Here is the id generated:</p>';
-      output += '<pre>' + JSON.stringify(body, null, '\t') + '</pre>';
-      
+      var output = 'Message has been posted to your feed. Here is the id generated:';
+      output += '\n' + JSON.stringify(body, null, '\t') + '\n';
+      console.log(output);
       // Send output as the response
-      response.writeHeader(200, {'Content-Type': 'text/html'});
-      response.end(output);
+      //response.writeHeader(200, {'Content-Type': 'text/html'});
+      //response.end(output);
     });
 
 }
@@ -46,13 +46,15 @@ rl.question('Enter a message : ', function(answer){
   message = answer;
   rl.question('Specify the URL and query string parameters needed for the request : ', function(answer){
  
-  url = answer;
-  });
-  
-  rl.question('Do you want to quit? enter q to quit', function(answer){
+      url = answer;
+	  postMessage(
+	  rl.question('Do you want to quit? enter q to quit', function(answer){
 	  if(quit == answer)
           rl.close();
   });
+  });
+  
+  
   
 });
 
