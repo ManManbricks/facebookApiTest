@@ -58,7 +58,7 @@ rl.question('Enter a message : ', function(answer){
 
 
 
-
+/*
 // Setup middleware
 app.use(express.static(__dirname));
 app.use(express.bodyParser());
@@ -86,3 +86,4 @@ app.listen(80);
 
 
 //exports.postMessage = postMessage;
+*/
