@@ -14,7 +14,7 @@ var access_token = "595375967308784|YFmEHJfn4rVdif8KHpQW7Yxl17g";
 var url = ""; //'https://graph.facebook.com/me/feed';
 var response = "";
 var quit = 'q';
-function postMessage(access_token, message, response) {
+function postMessage(access_token, message) {
     
     //Add Access token Parameter    
     var params = {
@@ -47,7 +47,7 @@ rl.question('Enter a message : ', function(answer){
   rl.question('Specify the URL and query string parameters needed for the request : ', function(answer){
  
       url = answer;
-	  postMessage(
+	  postMessage(access_token,message);
 	  rl.question('Do you want to quit? enter q to quit', function(answer){
 	  if(quit == answer)
           rl.close();
