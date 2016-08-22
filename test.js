@@ -1,4 +1,8 @@
 var readline = require('readline');
+var rl = readline.createInterface({
+  input: process.stdin,
+  output: process.stdout
+});
 var Twit = require('twit')
 
 var T = new Twit({
@@ -23,10 +27,7 @@ rl.question('Enter a post : ', function(answer){
 //var oauth = require('./oauth')
  // app = express();
 
-var rl = readline.createInterface({
-  input: process.stdin,
-  output: process.stdout
-});
+
 
 var message = "";
 var access_token = "595375967308784|YFmEHJfn4rVdif8KHpQW7Yxl17g";
