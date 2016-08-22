@@ -49,7 +49,7 @@ rl.question('Enter a message : ', function(answer){
   url = answer;
   });
   
-  r1.question('Do you want to quit? enter q to quit', function(answer){
+  rl.question('Do you want to quit? enter q to quit', function(answer){
 	  quit = answer;
   });
   if(q == quit)
