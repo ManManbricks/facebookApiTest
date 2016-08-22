@@ -13,8 +13,6 @@ var T = new Twit({
   access_token_secret:  'Y9tDNAYsW0NRkWYHlMtEMS2rBKbkJY8JPCUoa7phryW3o',
   timeout_ms:           60*1000,  
 });
-
-while(true){
 	
 console.log( "What do you want to do?" );
 console.log( "Enter 1 to post a comment" );
@@ -64,6 +62,6 @@ console.log( "Press exit to exit app" );
   console.log( "Exiting app..." );
   process.exit(0);
 });
-}
+
 
 
