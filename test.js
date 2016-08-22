@@ -14,11 +14,13 @@ var T = new Twit({
   timeout_ms:           60*1000,  
 });
 
+while(true){
+	
 console.log( "What do you want to do?" );
 console.log( "Enter 1 to post a comment" );
 console.log( "Enter 2 to search twitter for all tweets" );
 console.log( "Press exit to exit app" );
-rl.setPrompt("Enter choice:");
+rl.prompt();
 
 rl.on('line', (line) => {
 
@@ -27,7 +29,7 @@ rl.on('line', (line) => {
     case "1":
 	 
       rl.question('Enter a post : ', function(answer){
-            rl.prompt();
+            
 			T.post('statuses/update', { status: answer }, function(err, data, response) {
 			console.log(data);
 			});
@@ -51,16 +53,17 @@ rl.on('line', (line) => {
       console.log(`Invalid option '${line.trim()}'`);
       break;
   }
-  console.log( "What do you want to do?" );
+  /*console.log( "What do you want to do?" );
 console.log( "Enter 1 to post a comment" );
 console.log( "Enter 2 to search twitter for all tweets" );
 console.log( "Press exit to exit app" );
-  rl.prompt();
+  rl.prompt();*/
   
   }).on('close', () => {
   console.log('Thank You for using my app');
   console.log( "Exiting app..." );
   process.exit(0);
 });
+}
 
 
