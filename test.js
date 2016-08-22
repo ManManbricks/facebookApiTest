@@ -29,15 +29,16 @@ rl.on('line', (line) => {
 			console.log(data)
 			})
 		})
+		rl.prompt();
     break;
 	case "exit": rl.close(); break;
     default:
       console.log(`Invalid option '${line.trim()}'`);
       break;
   }
-  //console.log( "What do you want to do?" );
-//console.log( "Enter 1 to post a comment" );
-//console.log( "Press exit to exit app" );
+  console.log( "What do you want to do?" );
+console.log( "Enter 1 to post a comment" );
+console.log( "Press exit to exit app" );
   rl.prompt();
   
   }).on('close', () => {
