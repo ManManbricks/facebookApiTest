@@ -25,9 +25,9 @@ rl.on('line', (line) => {
 	switch(line.trim()) {
 		
     case "1":
-	 rl.pause();
+	 
       rl.question('Enter a post : ', function(answer){
-            
+            rl.prompt();
 			T.post('statuses/update', { status: answer }, function(err, data, response) {
 			console.log(data);
 			});
